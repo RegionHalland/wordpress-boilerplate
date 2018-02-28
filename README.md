@@ -5,8 +5,8 @@
 Following the steps below will leave you with a fresh Wordpress install, using the [Halland theme](https://github.com/regionhalland/halland). 
 
 1. Make sure the following dependencies are installed on your computer:
-- (Virtualbox)[https://www.virtualbox.org/wiki/Downloads] >= 4.3.10
-- (Vagrant)[https://www.vagrantup.com/intro/getting-started/index.html] >= 1.8.5
+- [Virtualbox](https://www.virtualbox.org/wiki/Downloads) >= 4.3.10
+- [Vagrant](https://www.vagrantup.com/intro/getting-started/index.html) >= 1.8.5
 
 2. Create a folder with the project name:
 `$ mkdir myproject && cd myproject`
