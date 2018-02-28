@@ -1,8 +1,7 @@
-# wordpress-boilerplate
+# Wordpress-boilerplate
+## Getting the server up and running
 
-## Getting started
-
-Following the steps below will leave you with a fresh Wordpress install, using the [Halland theme](https://github.com/regionhalland/halland). 
+Following the steps below will leave you with a fresh Wordpress install, in the [next chapter](#theme) we'll add our [Halland theme](https://github.com/regionhalland/halland) and explain how you can extend it when needed.
 
 **1. Make sure the following dependencies are installed on your computer:**
 - [Virtualbox](https://www.virtualbox.org/wiki/Downloads) >= 4.3.10
@@ -42,11 +41,11 @@ Follow the steps under [”Multisite”](#multisite).
 $ cd trellis && vagrant up
 ```
 
-## <a name="acf"></a>Setting up Advanced Custom Fields
+### <a name="acf"></a>Setting up Advanced Custom Fields
 
 TBD!
 
-## Multisite
+### Multisite
 
 It’s important to follow these steps before provisioning your server.
 
@@ -78,3 +77,10 @@ $ cd site && composer require roots/multisite-url-fixer
 ```
 $ cd trellis && vagrant up --provision
 ```
+
+## <a name="theme"></a>Setting up your theme and adding our main Halland Theme
+Most of our sites will use our main Halland theme as a starting point to build upon. The following steps explains how to create your own child theme and adding Halland as it's parent theme.
+
+## Working with our component library
+TBD
+
