@@ -21,7 +21,7 @@ git clone --depth=1 git@github.com:RegionHalland/wordpress-boilerplate.git && rm
 
 **4. Initialize a new GitHub repos for your new site using the [GitHub Desktop client](https://desktop.github.com/).**
 
-**5. Update the following files, replacing `example.com` with your local site name, like `myproject.test` and adding your [ACF-key](#acf) under `ACF_PRO_KEY`**
+**5. Update the following files, replacing `example.test` with your local site name, like `myproject.test` and adding your [ACF-key](#acf) under `ACF_PRO_KEY`**
 ```
 - ./trellis/group_vars/development/wordpress_sites.yml
 - ./trellis/group_vars/development/vault.yml
