@@ -16,7 +16,7 @@ $ mkdir myproject && cd myproject
 **3. Clone this repo in your directory and remove the .git folder:**
 
 ```
-git clone --depth=1 git@github.com:RegionHalland/wordpress-boilerplate.git && rm -rf ./wordpress-boilerplate/.git
+git clone https://github.com/RegionHalland/wordpress-boilerplate.git . && rm -rf .git
 ```
 
 **4. Initialize a new GitHub repos for your new site using the [GitHub Desktop client](https://desktop.github.com/).**
