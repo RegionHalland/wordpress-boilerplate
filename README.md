@@ -81,5 +81,5 @@ $ cd site && composer require roots/multisite-url-fixer
 
 **4. Provision your server from the `./trellis` directory:**
 ```
-$ cd trellis && vagrant up --provision
+$ cd trellis && vagrant up
 ```
