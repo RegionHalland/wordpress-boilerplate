@@ -74,12 +74,13 @@ define('SITE_ID_CURRENT_SITE', env('SITE_ID_CURRENT_SITE') ?: 1);
 define('BLOG_ID_CURRENT_SITE', env('BLOG_ID_CURRENT_SITE') ?: 1);
 ```
 
-**3. Install the multisite-url-fixer mu-plugin:**
+**3. Provision your server from the `./trellis` directory:**
+```
+$ cd trellis && vagrant up
+```
+
+**4. Install the multisite-url-fixer mu-plugin:**
 ```
 $ cd site && composer require roots/multisite-url-fixer
 ```
 
-**4. Provision your server from the `./trellis` directory:**
-```
-$ cd trellis && vagrant up
-```
