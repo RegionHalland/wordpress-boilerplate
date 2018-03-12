@@ -1,4 +1,5 @@
 # Wordpress-boilerplate
+
 ## Getting the server up and running
 
 Following the steps below will leave you with a fresh Wordpress install. Head over to the [Halland theme repos](https://github.com/regionhalland/halland) for information on how to add our main theme to your site.
@@ -10,22 +11,22 @@ Following the steps below will leave you with a fresh Wordpress install. Head ov
 
 **2. Create a folder with the project name:**
 
-```
+```sh
 $ mkdir myproject && cd myproject
 ```
 
 **3. Clone this repo in your directory and remove the .git folder:**
 
-```
-git clone https://github.com/RegionHalland/wordpress-boilerplate.git . && rm -rf .git
+```sh
+$ git clone https://github.com/RegionHalland/wordpress-boilerplate.git . && rm -rf .git
 ```
 
 **4. Initialize a new GitHub repos for your new site using the [GitHub Desktop client](https://desktop.github.com/).**
 
 **5. Update the following files, replacing `example.test` with your local site name, like `myproject.test` and adding your [ACF-key](#acf) under `ACF_PRO_KEY`**
-```
-- ./trellis/group_vars/development/wordpress_sites.yml
-- ./trellis/group_vars/development/vault.yml
+```sh
+./trellis/group_vars/development/wordpress_sites.yml
+./trellis/group_vars/development/vault.yml
 ```
 
 For more options, see [Trellis documentation](https://roots.io/trellis/docs/wordpress-sites/#options).
@@ -37,7 +38,7 @@ For more options, see [Trellis documentation](https://roots.io/trellis/docs/word
 Follow the steps under [”Multisite”](#multisite).
 
 **8. Provision your server from the `./trellis` directory:**
-```
+```sh
 $ cd trellis && vagrant up
 ```
 
@@ -56,14 +57,14 @@ TBD!
 It’s important to follow these steps before provisioning your server.
 
 **1. Update multisite settings in `./trellis/group_vars/development/wordpress_sites`:**
-```
+```yml
 multisite:
   enabled: true
   subdomains: false
 ```
 
 **2. Add the following code somewhere in `./site/config/application.php`:**
-```
+```php
 /* Multisite */
 define('WP_ALLOW_MULTISITE', true);
 define('MULTISITE', true);
@@ -75,12 +76,34 @@ define('BLOG_ID_CURRENT_SITE', env('BLOG_ID_CURRENT_SITE') ?: 1);
 ```
 
 **3. Provision your server from the `./trellis` directory:**
-```
+```sh
 $ cd trellis && vagrant up
 ```
 
 **4. Install the multisite-url-fixer mu-plugin:**
-```
+```sh
 $ cd site && composer require roots/multisite-url-fixer
 ```
 
+## Component Library (WIP)
+
+To use a local version of the [Component Library](https://github.com/regionhalland/styleguide), define `COMPONENT_LIB_URL` as en environment variable in `./trellis/group_vars/development/vault.yml` and point it to your local installation of the component library:
+```yml
+vault_wordpress_sites:
+  example.com:
+    ...
+    env:
+      ...
+      COMPONENT_LIB_URL: 'http://styleguide.test/dist/css/main.min.css'
+```
+
+Make sure your installation of the component library allows CORS by adding the following in the server block of it's nginx config:
+
+```nginx
+# Allow CORS 
+location ~* \.(eot|ttf|woff|woff2)$ {
+    add_header 'Access-Control-Allow-Methods' 'OPTIONS, GET, POST, PUT, PATCH, DELETE';
+    add_header 'Access-Control-Allow-Origin' '*';
+    add_header 'Access-Control-Allow-Credentials' 'true';
+}
+```
