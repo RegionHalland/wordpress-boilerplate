@@ -97,7 +97,7 @@ vault_wordpress_sites:
       COMPONENT_LIB_URL: 'http://styleguide.test/temp/css/main.min.css'
 ```
 
-Make sure your installation of the component library allows CORS by adding the following in the server block of it's nginx config:
+Make sure your installation of the component library allows CORS by adding the following in the server block of your styleguides nginx config:
 
 ```nginx
 # Allow CORS 
